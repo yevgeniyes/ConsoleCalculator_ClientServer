@@ -17,10 +17,6 @@ namespace ConsoleCalculator.Client
         [Config("$test-service-node")]
         private string m_TestServiceNode;
 
-        /// <summary>
-        ///Main logic: read, validate and split input, select operation, complete operation based on operation tag ("math" or "file") 
-        /// </summary>
-
         public void Run()
         {
             while (true)
@@ -30,7 +26,6 @@ namespace ConsoleCalculator.Client
 
                 if (splitedInput == null) continue;
 
-                //request here
                 try
                 {
                     using (var client = new EchoServiceClient(m_TestServiceNode))
@@ -46,7 +41,8 @@ namespace ConsoleCalculator.Client
                 
                 catch (Exception error)
                 {
-                    Console.WriteLine(error.ToMessageWithType());
+                    Console.Write("\nServer error: ");
+                    Console.WriteLine(error.Message + "\n");
                 }
             }
         }

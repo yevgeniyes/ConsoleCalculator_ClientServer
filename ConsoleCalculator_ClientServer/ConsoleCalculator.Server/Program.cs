@@ -12,10 +12,9 @@ namespace ConsoleCalculator.Server
             {
                 using (var application = new ServiceBaseApplication(args, null))
                 {
-                    Console.WriteLine("server is running...");
-                    Console.WriteLine("Glue servers:");
+                    Console.WriteLine("Console Calculator Server 1.0\n\nserver is running...\n");
                     foreach (var server in App.Glue.Servers)
-                        Console.WriteLine("   " + server);
+                        Console.WriteLine(server);
 
                     Console.ReadLine();
                 }
@@ -24,6 +23,7 @@ namespace ConsoleCalculator.Server
             {
                 Console.WriteLine("error:");
                 Console.WriteLine(ex.ToString());
+                Console.ReadKey();
             }
         }
     }
