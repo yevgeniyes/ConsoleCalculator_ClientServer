@@ -14,7 +14,7 @@ namespace ConsoleCalculator.Client.ClientServices
         {
             var t = typeof(IEchoService);
             s_ts_CONTRACT = new TypeSpec(t);
-            s_ms_Echo_0 = new MethodSpec(t.GetMethod("Echo", new Type[] { typeof(string) }));
+            s_ms_Echo_0 = new MethodSpec(t.GetMethod("Echo", new Type[] { typeof(string[]) }));
         }
 
         public EchoServiceClient(string node, Binding binding = null) : base(node, binding) { ctor(); }
